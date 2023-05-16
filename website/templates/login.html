@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"> </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'hospital/css/login.css' %}">
+  <link rel="icon" type="image/x-icon" href="{% static 'hospital/images/logo.jpg'%}">
+  <title>Вход в личный кабинет</title>
+</head>
+<body>
+  <div class="container">
+    <div class="content">
+      <strong class="title">Вход в личный кабинет</strong>
+      <form method="post" action="">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input class="button" type="submit" name="" value="Войти">
+        <p><a href="{% url 'signup' %}">Регистрация</a> </p>
+        <p><a href="{% url 'index' %}">Главная страница</a> </p>
+        {% for message in messages %}
+          <p class="errormessage">{{message}}</p>
+        {% endfor %}
+    </form>
+    </div>
+  </div>
+</body>
+</html>

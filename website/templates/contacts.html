@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block title %}<title>Контакты</title> {% endblock %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"> </script>
+    <script scr="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'hospital/css/style.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'hospital/images/logo.jpg'%}">
+    {% block head%} {% endblock %}
+</head>
+<body>
+    {% block header %}
+    <header align="center">
+        <div class="header-nav">
+            <ul>
+                <li><a href="{% url 'index' %}">Главная страница</a></li>
+                <li><a href="{% url 'news' %}">Новости</a></li>
+                <li><a class="current" href="{% url 'contacts' %}">Контакты</a></li>
+                <li><a href="{% url 'about' %}">О нас</a></li>
+                <li><a href="{% url 'FAQ' %}">Вопросы</a></li>
+                <li><a class="sign" href="{% url 'signup' %}">Регистрация</a></li>
+                <li><a class="sign" href="{% url 'login' %}">Войти в личный кабинет</a></li>
+            </ul>
+        </div>
+    </header>
+    {% endblock %}
+    <div class="container">
+        <div class="question">
+            <p>Адрес: Казань, ул. Зеленая, 1</p>
+            <p>Электронная почта: stom@gmail.com</p>
+            <p>Телефон: +7 (900)-800-70-60</p>
+        </div>
+    </div>
+    {% block footer %}
+        <footer>
+            <div class="downside">
+                {% block copyright %}<p>Copyright ООО "Роот М.В.", 2023. Все права защищены.</p>{% endblock %}
+            </div>
+        </footer>
+    {% endblock %}
+</body>
+</html>

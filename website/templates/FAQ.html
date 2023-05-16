@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block title %}<title>Часто задаваемые вопросы</title> {% endblock %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"> </script>
+    <script scr="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'hospital/css/style.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'hospital/images/logo.jpg'%}">
+    {% block head%} {% endblock %}
+</head>
+<body>
+    {% block header %}
+    <div class="header-nav">
+        <header align="center">
+            <ul class="header-nav-bar">
+                <li><a href="{% url 'index' %}">Главная страница</a></li>
+                <li><a href="{% url 'news' %}">Новости</a></li>
+                <li><a href="{% url 'contacts' %}">Контакты</a></li>
+                <li><a href="{% url 'about' %}">О нас</a></li>
+                <li><a class="current" href="{% url 'FAQ' %}">Вопросы</a></li>
+                <li><a class="sign" href="{% url 'signup' %}">Регистрация</a></li>
+                <li><a class="sign" href="{% url 'login' %}">Войти в личный кабинет</a></li>
+            </ul>
+        </header>
+    </div>
+    {% endblock %}
+    <div class="container">
+        <div class="question">
+            <p>Как долго приживляется имплант?</p>
+            <span>Это зависит от факторов, на какую область в полости рта установлен имплант. Приживление идет, как правило, от 3 до 6 месяцев- именно столько нужно для полного срастания имплантата с костной тканью.</span>
+        </div>
+        <div class="question">
+            <p>Как это без разрезов и боли?</p>
+            <span>Хирург устанавливает имплантат без разреза десны, через небольшое отверстие в десне. По индивидуальным данным пациента делается шаблон для точной установки имплантата. С помощью этого приспособления, врач с точностью до миллиметра может установить имплантат в костную ткань челюсти. Такая установка исключает любые риски, связанные с травмированием носовых пазух и нервов.</span>
+        </div>
+        <div class="question">
+            <p>В чем разница между имплантами?</p>
+            <span>Стоимость имплантатов напрямую зависит от их качественных свойств. Например, имплантат Nobel BioCare относится к премиум сегменту в связи с тем, что он позволяет значительно улучшить результат и долговременный прогноз лечения. Он позволяет избежать сложных трудных костных пластик значительно ускорит время протезирования и приживления имплантата</span>
+        </div>
+        <div class="question">
+            <p>От чего зависит стоимость лечения зуба?</p>
+            <span>Ценовая политика сети клиник «Риадент» лояльна по отношению к пациенту, а лечение зубов может варьироваться от глубины поражения, методики лечения, количества каналов и применяемых материалов.</span>
+        </div>
+        <div class="question">
+            <p>Какую анестезию Вы используете?</p>
+            <span>Ультракаин – нетоксичный анестетик. Быстро выводится из организма.</span>
+        </div>
+        <div class="question">
+            <p>Беременным можно лечить зубы?</p>
+            <span>Зубы лечить конечно же можно. Но лечение стараются назначить на втором триместре. В период до 13 недель, лечение проводят в экстренных случаях, при острой боли. Во время беременности, используют щадящую анестезию без использования адреналина.</span>
+        </div>
+    </div>
+    {% block footer %}
+    <footer>
+        <div class="downside">
+            {% block copyright %}<p>Copyright ООО "Роот М.В.", 2023. Все права защищены</p>{% endblock %}
+        </div>
+    </footer>
+    {% endblock %}
+</body>
+</html>

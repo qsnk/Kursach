@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"> </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'hospital/css/registration.css' %}">
+  <link rel="icon" type="image/x-icon" href="{% static 'hospital/images/logo.jpg'%}">
+  <title>Регистрация</title>
+</head>
+<body>
+  {% block registration %}
+  <div class="cont">
+    <form class="container" method="post">
+      {% csrf_token %}
+      <strong class="title">Регистрация</strong>
+      <div class="field">
+        {{ form.username }}
+      </div>
+      <div class="field">
+        {{ form.email }}
+      </div>
+      <div class="field">
+        {{ form.password1 }}
+      </div>
+      <div class="field">
+        {{ form.password2 }}
+      </div>
+      <div class="field">
+        {{ form.first_name }}
+      </div>
+      <div class="field">
+        {{ form.second_name }}
+      </div>
+      <div class="field">
+        {{ form.last_name }}
+      </div>
+      <div class="field">
+        {{ form.birth_date }}
+      </div>
+      <div class="field">
+        {{ form.insurance }}
+      </div>
+
+      <div class="gender">
+        <p>Пол</p>
+        <p><input type="radio" name="gender" value="male">Мужской</p>
+        <p><input type="radio" name="gender" value="female">Женский</p>
+      </div>
+      <input class="button" type="submit" name="" value="Зарегистрироваться">
+      <p><a href="{% url 'login' %}">Войти в личный кабинет</a> </p>
+    </form>
+  </div>
+  {% endblock %}
+</body>
+</html>

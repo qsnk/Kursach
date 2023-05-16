@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head%}
+    {% block title %}<title>Экспорт данных</title> {% endblock %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"> </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'hospital/css/logout.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'hospital/images/logo.jpg'%}">
+    {% endblock %}
+</head>
+<body>
+    {% block header %}
+    <header>
+        <div class="header-nav">
+            <span class="greeting">Здравствуйте, {{request.user.username}}</span>
+            <span><a href="{% url 'logout'%}" class="logoutbtn">Выйти</a></span>
+        </div>
+    </header>
+    {% endblock %}
+    <div class="container">
+        <div class="left-side">
+            <ul>
+                <li><a href="{% url 'personal_account' %}">Мои записи</a></li>
+                <li><a href="{% url 'make_record' %}">Записаться к врачу</a></li>
+                <li><a href="{% url 'account_data' %}">Мои данные</a></li>
+                <li><a href="{% url 'account_edit' %}">Редактировать данные</a></li>
+                {% if request.user.is_staff %}
+                    <li><a class="current" href="{% url 'export' %}">Экспорт данных</a></li>
+                {% endif %}
+            </ul>
+        </div>
+        <div class="content">
+            {% if request.user.is_staff %}
+                <p class="title">Экспорт данных в Excel</p>
+                <p><a href="{% url 'export_users' %}">Экспорт пользователей</a></p>
+                <p><a href="{% url 'export_doctors' %}">Экспорт врачей</a></p>
+                <p><a href="{% url 'export_records' %}">Экспорт записей</a></p>
+            {% endif %}
+        </div>
+    </div>
+    {% block footer %}
+    <footer>
+        <div class="downside">
+            {% block copyright %}<p>Copyright ООО "Роот М.В.", 2023. Все права защищены</p>{% endblock %}
+        </div>
+    </footer>
+    {% endblock %}
+</body>
+</html>

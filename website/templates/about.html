@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block title %}<title>О нас</title> {% endblock %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"> </script>
+    <script scr="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'hospital/css/style.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'hospital/images/logo.jpg'%}">
+    {% block head%} {% endblock %}
+</head>
+<body>
+    {% block header %}
+        <div class="header-nav">
+            <header align="center">
+                <ul>
+                    <li><a href="{% url 'index' %}">Главная страница</a></li>
+                    <li><a href="{% url 'news' %}">Новости</a></li>
+                    <li><a href="{% url 'contacts' %}">Контакты</a></li>
+                    <li><a class="current" href="{% url 'about' %}">О нас</a></li>
+                    <li><a href="{% url 'FAQ' %}">Вопросы</a></li>
+                    <li><a class="sign" href="{% url 'signup' %}">Регистрация</a></li>
+                    <li><a class="sign" href="{% url 'login' %}">Войти в личный кабинет</a></li>
+                </ul>
+            </header>
+        </div>
+    {% endblock %}
+    <div class="person_container">
+        <div class="person">
+            <img src="{% static 'hospital/images/avatar.png'%}" alt="" width="150" height="150"> Радионов Никита Юрьевич
+            <br>
+            <p>Стаж: 10 лет</p>
+            <p>Спецальность: Стоматолог</p>
+        </div>
+        <div class="person">
+            <img src="{% static 'hospital/images/avatar.png'%}" alt="" width="150" height="150"> Яковлева Ольга Олеговна
+            <br>
+            <p>Стаж: 15 лет</p>
+            <p>Спецальность: Стоматолог-хирург</p>
+        </div>
+        <div class="person">
+            <img src="{% static 'hospital/images/avatar.png'%}" alt="" width="150" height="150"> Китаев Илья Ильич
+            <br>
+            <p>Стаж: 7 лет</p>
+            <p>Спецальность: Стоматолог-ортопед</p>
+        </div>
+        <div class="person">
+            <img src="{% static 'hospital/images/avatar.png'%}" alt="" width="150" height="150"> Басова Светлана Сергеевна
+            <br>
+            <p>Стаж: 12 лет</p>
+            <p>Спецальность: Стоматолог-парадантолог</p>
+        </div>
+        <div class="person">
+            <img src="{% static 'hospital/images/avatar.png'%}" alt="" width="150" height="150"> Паламарчук Сергей Николаевич
+            <br>
+            <p>Стаж: 8 лет</p>
+            <p>Спецальность: Имплантолог</p>
+        </div>
+        <div class="person">
+            <img src="{% static 'hospital/images/avatar.png'%}" alt="" width="150" height="150"> Кулаев Алексей Евгеньевич
+            <br>
+            <p>Стаж: 14 лет</p>
+            <p>Спецальность: Стоматолог</p>
+        </div>
+        <div class="person">
+            <img src="{% static 'hospital/images/avatar.png'%}" alt="" width="150" height="150"> Осинникова Светлана Юрьевна
+            <br>
+            <p>Стаж: 5 лет</p>
+            <p>Спецальность: Детский стоматолог</p>
+        </div>
+        <div class="person">
+            <img src="{% static 'hospital/images/avatar.png'%}" alt="" width="150" height="150"> Мокрушина Елена Валерьевна
+            <br>
+            <p>Стаж: 9 лет</p>
+            <p>Спецальность: Стоматолог</p>
+        </div>
+    </div>
+    {% block footer %}
+        <footer>
+            <div class="downside">
+                {% block copyright %}<p>Copyright ООО "Роот М.В.", 2023. Все права защищены.</p>{% endblock %}
+            </div>
+        </footer>
+    {% endblock %}
+</body>
+</html>

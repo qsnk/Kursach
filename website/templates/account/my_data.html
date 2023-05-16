@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head%}
+    {% block title %}<title>Мои данные</title> {% endblock %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"> </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'hospital/css/logout.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'hospital/images/logo.jpg'%}">
+    {% endblock %}
+</head>
+<body>
+    {% block header %}
+    <header>
+        <div class="header-nav">
+            <span class="greeting">Здравствуйте, {{request.user.username}}</span>
+            <span><a href="{% url 'logout'%}" class="logoutbtn">Выйти</a></span>
+        </div>
+    </header>
+    {% endblock %}
+    <div class="container">
+        <div class="left-side">
+            <ul>
+                <li><a href="{% url 'personal_account' %}">Мои записи</a></li>
+                <li><a href="{% url 'make_record' %}">Записаться к врачу</a></li>
+                <li><a class="current" href="{% url 'account_data' %}">Мои данные</a></li>
+                <li><a href="{% url 'account_edit' %}">Редактировать данные</a></li>
+                {% if request.user.is_staff %}
+                    <li><a href="{% url 'export' %}">Экспорт данных</a></li>
+                {% endif %}
+            </ul>
+        </div>
+        <div class="content">
+            <div class="data">
+                {% if user.is_authenticated %}
+                    <p class="title">Мои данные</p>
+                    <p>Имя пользователя: {{ request.user.username }}</p>
+                    <p>Электронная почта: {{ request.user.email }}</p>
+                    <p>Имя: {{ request.user.first_name }}</p>
+                    <p>Фамилия: {{ request.user.second_name }}</p>
+                    <p>Отчество: {{ request.user.last_name }}</p>
+                    <!--<p>Пол: {{ request.user.gender }}</p>
+                    <p>Дата рождения: {{ request.user.birth_date }}</p>
+                    <p>Полис ОМС: {{ request.user.insurance }}</p>
+                    <p>Адрес: {{ request.user.address }}</p>
+                    <p>Номер телефона: {{ request.user.phone }}</p>
+                    <p>Запасная электронная почта: {{ request.user.reserve_email }}</p>-->
+                {% endif %}
+            </div>
+
+        </div>
+    </div>
+    {% block footer %}
+    <footer>
+        <div class="downside">
+            {% block copyright %}<p>Copyright ООО "Роот М.В.", 2023. Все права защищены</p>{% endblock %}
+        </div>
+    </footer>
+    {% endblock %}
+</body>
+</html>

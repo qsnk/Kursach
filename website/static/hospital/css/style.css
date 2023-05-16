@@ -1,0 +1,157 @@
+body{
+    font-family: Arial;
+    margin:0px;
+    padding:0px;
+}
+
+.container{
+    display: grid;
+    float:left;
+    margin:10px;
+    width:-webkit-fill-available;
+}
+
+a:hover{
+    text-decoration: none;
+    background: white;
+    color: #4262d6;
+    border-radius:10px;
+}
+
+.header-nav{
+    font-size: 30px;
+    padding:30px;
+    color:white;
+    text-decoration: none;
+    margin:20px;
+    background: #4262d6;
+    float:left;
+    width:-webkit-fill-available;
+    border-radius:10px;
+}
+
+.header-nav ul li a{
+    padding:10px;
+}
+
+header ul li{
+    display: inline;
+}
+
+header ul a{
+    font-size: 30px;
+    padding:20px;
+    margin: 20px;
+    color:white;
+    text-decoration: none;
+}
+.sign{
+    font-size:10pt;
+    display:inline;
+    margin:0px;
+    padding:0px;
+    background: #4262d6;
+    color:white;
+    float:right;
+
+}
+
+a{
+    color:white;
+}
+
+a:active{
+    text-decoration: none;
+}
+
+.current{
+    background: white;
+    color: #4262d6;
+    border-radius:10px;
+}
+
+
+.content{
+    margin:0px 20px 20px 20px;
+    float:left;
+    border-radius:10px;
+    color:white;
+    background: #4262d6;
+    padding:10px;
+    font-size:large;
+}
+
+footer{
+    float:left;
+    display:contents;
+}
+
+.container-q{
+    float:left;
+    clear:left;
+    border-radius:10px;
+    width:-webkit-fill-available;
+    margin:0px 20px 20px 20px;
+    padding:10px;
+}
+
+.downside{
+    margin-left:40%;
+    float:left;
+}
+
+.question{
+    background: #4262d6;
+    margin:10px;
+    font-size:large;
+    border-radius:10px;
+    color:white;
+    padding:10px;
+    display:grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+
+}
+.question p{
+    font-weight:bold;
+}
+.question span{
+    margin:0px 0px 30px 20px;
+}
+
+.person_container{
+    width:-webkit-fill-available;
+    display:grid;
+    float: left;
+    grid-template-columns: 600px 600px;
+    grid-template-rows: 400px 400px 400px 400px;
+    margin: 10px;
+}
+
+.person{
+    float: left;
+    color:white;
+    background: #4262d6;
+    border-radius:10px;
+    margin:20px;
+    padding: 10px;
+    font-size: 16pt;
+}
+
+.person img{
+    padding: 0px 0px 10px 0px;
+}
+
+.news{
+    display:grid;
+    float: left;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    background: #4262d6;
+    font-size:large;
+    color:white;
+    margin:10px;
+    border-radius:10px;
+    padding:10px;
+}
+

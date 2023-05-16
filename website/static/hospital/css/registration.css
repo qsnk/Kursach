@@ -1,0 +1,124 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+}
+
+.cont{
+    background: #4262d6;
+}
+
+
+.content{
+    width: 400px;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    float:left;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border-radius: 20px;
+    background: #4262d6;
+    color:white;
+}
+
+.field{
+    border-radius:10px;
+    text-decoration: none;
+    margin: 7px;
+    height: 40px;
+    width: 200px;
+    text-align: center;
+}
+
+input{
+    border-radius:10px;
+    text-decoration: none;
+    margin: 7px;
+    height: 40px;
+    width: 200px;
+    text-align: center;
+    color:black;
+    font-weight: bold;
+}
+
+select{
+    border-radius:10px;
+    text-decoration: none;
+    margin: 7px;
+    height: 40px;
+    width: 100px;
+    text-align: center;
+    color:black;
+}
+
+input::placeholder{
+   text-align: center;
+}
+
+.button{
+    border-radius:10px;
+    margin:5px;
+    display: block;
+    text-align: center;
+    position: relative;
+    left: 48%;
+    transform: translate(-50%, 0);
+    text-size: 14pt;
+    text-decoration: none;
+    width: 200px;
+    height: 40px;
+    color: black;
+    font-weight: bold;
+}
+
+a{
+    text-decoration: none;
+    font-family: Arial;
+    font-size: 10pt;
+    color: white;
+    position: relative;
+    transform: translate(-50%, 0);
+    left: 0%;
+}
+
+a:hover{
+    text-decoration: none;
+    color: beige;
+}
+
+.title{
+    font-size: 20pt;
+    color: white;
+}
+
+.gender{
+
+
+}
+
+.gender p{
+    color: white;
+    font-size: 14pt;
+    text-decoration: none;
+    position: relative;
+}
+
+.gender table{
+    color: white;
+    font-size: 12pt;
+    text-decoration: none;
+}
+.gender table td{
+    margin: 10px;
+}
+
+
+.content p select{
+    color:black;
+}
+
+.content p select option{
+    color:black;
+}

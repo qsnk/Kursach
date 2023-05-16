@@ -1,0 +1,8 @@
+<input class="field" type="text" placeholder="Имя пользователя" name="username">
+      <input class="field" type="password" placeholder="Пароль" name="password">
+      <input class="field" type="email" placeholder="Электронная почта" name="email">
+      <input class="field" type="text" placeholder="Имя" name="first_name">
+      <input class="field" type="text" placeholder="Фамилия" name="second_name">
+      <input class="field" type="text" placeholder="Отчество" name="last_name">
+      <input class="field" type="date" placeholder="Дата рождения" name="date">
+      <input class="field" type="number" placeholder="Полис ОМС" max="999999" min="0" name="insurance">

@@ -1,0 +1,155 @@
+body{
+    font-family:Arial;
+    margin:0px;
+    padding:0px;
+}
+
+.header-nav{
+    margin:20px;
+    color:white;
+    background: #4262d6;
+    text-decoration:none;
+    font-size:20pt;
+    list-style:none;
+    float:left;
+    width:-webkit-fill-available;
+    border-radius:10px;
+    padding:30px;
+}
+
+a{
+    color:white;
+    text-decoration:none;
+}
+
+a:hover{
+    color: #4262d6;
+    text-decoration:none;
+    background:white;
+    border-radius:5px;
+}
+
+.header-nav-bar{
+}
+
+.container{
+    display:grid;
+    padding:20px;
+    text-decoration:none;
+    list-style:none;
+    grid-auto-columns:400px;
+}
+
+.left-side{
+    clear:left;
+    float:left;
+    margin:0px 20px 20px 20px;
+    background: #4262d6;
+    border-radius:10px;
+    font-size: 25px;
+    padding:30px 20px 30px 20px;
+    color:white;
+    grid-column-start:1;
+    grid-column-end:1;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.content{
+    float:left;
+    margin:0px 20px 20px 20px;
+    background: #4262d6;
+    border-radius:10px;
+    font-size: large;
+    color:white;
+    padding:30px 20px 30px 20px;
+    grid-column-start:2;
+    grid-column-end:4;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+input{
+    color:black;
+}
+
+.title{
+    font-size:large;
+    font-weight:bold;
+}
+
+.content p select{
+    color:black;
+}
+
+.content p select option{
+    color:black;
+}
+
+.left-side ul{
+    padding:20px;
+}
+
+.left-side ul li{
+    text-decoration:none;
+    list-style:none;
+    margin-bottom:inherit;
+}
+
+.greeting{
+    float:left;
+}
+
+.logoutbtn{
+    float:right;
+}
+
+.current{
+    background:white;
+    color: #4262d6;
+    border-radius:5px;
+    padding:5px;
+}
+
+
+footer{
+    float:left;
+    display:contents;
+}
+.downside{
+    float:left;
+    margin-left:40%;
+    grid-column-start:1;
+    grid-column-end:4;
+    grid-row-start: 4;
+    grid-row-end: 4;
+}
+
+div input{
+    border-radius:10px;
+    text-decoration: none;
+    margin: 7px;
+    height: 40px;
+    width: 250px;
+    text-align: center;
+    font-weight: bold;
+}
+div select{
+    border-radius:10px;
+    text-decoration: none;
+    margin: 7px;
+    height: 40px;
+    width: 200px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.succesmessage{
+    color:white;
+    font-size:large;
+    text-decoration: none;
+}
+
+.data{
+    font-size:large;
+}
