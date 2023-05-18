@@ -36,9 +36,12 @@
         </div>
         <div class="content">
             <p class="title">Мои записи</p>
-            {% for record in records %}
-                <p> {{record}}</p>
-            {% endfor %}
+                {% for record in records %}
+                   <p> {{record}} <a class="delete" href="delete/{{record.id}}">Отмена</a></p>
+                {% endfor %}
+                {% for message in messages %}
+                  <p class="errormessage">{{message}}</p>
+                {% endfor %}
         </div>
     </div>
     {% block footer %}

@@ -1,10 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
-from .models import Patient, Doctor,Record, CustomUser
+from .models import Doctor,Record, CustomUser
 from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.forms import UserCreationForm
-from .forms import PatientForm, LoginForm, RecordForm, RegistrationForm, MyDataEditForm #CreateUserForm
-from django.http import HttpResponse
+from .forms import PatientForm, LoginForm, RecordForm, MyDataEditForm
+from django.http import HttpResponse, HttpResponseRedirect, HttpResponseNotFound
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 import xlwt
@@ -129,6 +128,16 @@ def export_page(request):
     else:
         return redirect('login')
 
+
+def delete(request, id):
+    try:
+        record = Record.objects.get(id=id)
+        record.delete()
+        messages.info(request, "Запись отменена!")
+        return HttpResponseRedirect('/login/personal_account')
+    except Record.DoesNotExist:
+        messages.info(request, "Запись не найдена!")
+        return HttpResponseNotFound("<h2>Запись не найдена</h2>")
 
 def export_users_xls(request):
     response = HttpResponse(content_type='application/ms-excel')

@@ -23,6 +23,7 @@ urlpatterns = [
     path('contacts/', views.contacts, name='contacts'),
     path('login/', views.sign_in, name='login'),
     path('login/personal_account/', views.personal_account, name='personal_account'),
+    path('login/personal_account/delete/<int:id>/', views.delete, name='delete'),
     path('login/personal_account/record/', views.make_record, name='make_record'),
     path('login/personal_account/my_data/', views.get_data, name='account_data'),
     path('login/personal_account/edit/', views.edit_data, name='account_edit'),

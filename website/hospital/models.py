@@ -3,27 +3,6 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser, BaseUserManager
 # Create your models here.
 
-
-
-class Patient(models.Model):
-    first_name = models.CharField(max_length=20, help_text='Введите ваше имя', verbose_name='Имя')
-    second_name = models.CharField(max_length=20, help_text='Введите вашу фамилию', verbose_name='Фамилия')
-    last_name = models.CharField(max_length=25, help_text='Введите ваше отчество', verbose_name='Отчество')
-    # gender = models.CharField(max_length=11)
-    birth_date = models.DateField(help_text='Введите дату рождения', verbose_name='Дата рождения')
-    insurance = models.BigIntegerField(help_text='Введите номер страхового полиса', verbose_name='Страховой полис')
-    email = models.CharField(max_length=40, help_text='Введите вашу электронную почту', verbose_name='Электронная почта', unique=True) # forms.emailField
-    username = models.CharField(max_length=20, help_text='', verbose_name='Имя пользователя', unique=True)
-    password = models.CharField(max_length=30, help_text='Введите пароль', verbose_name='Пароль')
-    address = models.CharField(max_length=100, help_text='Введите адрес', verbose_name='Адрес', null=True)
-    phone = models.CharField(max_length=12, help_text='Введите телефон', verbose_name='Телефон', null=True)
-    reserve_email = models.CharField(max_length=40, help_text='Введите запасную электронную почту', verbose_name='Электронная почта', null=True)
-    USERNAME_FIELD = 'username'
-
-    @classmethod
-    def create(cls, username, email, password, first_name, second_name, last_name, birth_date, insurance):
-        return cls(username=username, email=email, password=password, first_name=first_name, second_name=second_name, last_name=last_name, birth_date=birth_date, insurance=insurance)
-
 class CustomUserManager(BaseUserManager):
     def create_user(self, email, password, **extra_fields):
         email = self.normalize_email(email)
